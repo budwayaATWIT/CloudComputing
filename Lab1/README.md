@@ -1,6 +1,9 @@
 **CloudComputing Lab 1**
 
 **Project Introduction:**
+
+
+
 This project is a basic web API service built using FastAPI, a fast web framework for building APIs with Python 3.7+ based on standard Python type hints.
 It demonstrates fundamental web API features such as:
 Basic routing
@@ -11,6 +14,9 @@ Simple dynamic functionality
 
 
 **Project Description:**
+
+
+
 The application exposes 10+ API routes covering:
 Simple text responses,
 Query string inputs,
@@ -21,6 +27,9 @@ Status checks and time display,
 This project is ideal for beginners learning FastAPI and understanding how to structure RESTful endpoints.
 
 **Project Design:**
+
+
+
 FastAPI is used to set up the web service.
 Each route is mapped to a clear functional purpose.
 Pydantic is used for data validation in POST requests.
@@ -33,12 +42,19 @@ Logic-based Responses (math, string manipulation),
 User Lookup Simulation
 
 **How to run Project:**
+
+
 1. **Clone the repo:** 
+
+ 
  git clone https://github.com/budwayaATWIT/CloudComputing.git
-cd Lab1
+ cd Lab1
+
 2. **Install dependicies:**
 pip install fastapi uvicorn
-3. **Running Server* uvicorn Lab1:app --port 8080 --reload
+
+
+3. **Running Server:** uvicorn Lab1:app --port 8080 --reload
 
 **Routes Overview**:
 | Method | Route                          | Description                        |

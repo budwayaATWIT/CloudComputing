@@ -60,12 +60,17 @@ pip install fastapi uvicorn
 | Method | Route                          | Description                        |
 | ------ | ------------------------------ | ---------------------------------- |
 | GET    | `/`                            | Root route greeting                |
-| GET    | `/Hello?name=Aaron&age=22`      | Query param greeting               |
-| GET    | `/hello/Aaron/22`               | Path param greeting                |
+| GET    | `/Hello?name=Aaron&age=22`     | Query param greeting               |
+| GET    | `/hello/Aaron/22`              | Path param greeting                |
 | POST   | `/hello_personclass`           | Pydantic-based JSON greeting       |
 | GET    | `/time`                        | Returns current timestamp          |
-| GET    | `/greet?name=Aaron&city=Boston` | Custom greeting with name and city |
+| GET    | `/greet?name=Aaron&city=Boston`| Custom greeting with name and city |
 | GET    | `/Square?number=5`             | Returns square of a number         |
 | GET    | `/reverse?string=test`         | Reverses the input string          |
 | GET    | `/status?is_online=true`       | Returns status: Online or Offline  |
 | GET    | `/user/1`                      | Returns user info by ID            |
+
+curl -X POST "http://localhost:8000/hello_personclass" \
+-H "Content-Type: application/json" \
+-d '{"name": "Aaron", "age": 22}'
+

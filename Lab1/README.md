@@ -70,7 +70,7 @@ pip install fastapi uvicorn
 | GET    | `/status?is_online=true`       | Returns status: Online or Offline  |
 | GET    | `/user/1`                      | Returns user info by ID            |
 
-curl -X POST "http://localhost:8000/hello_personclass" \
+curl -X POST "http://localhost:8080/hello_personclass" \
 -H "Content-Type: application/json" \
 -d '{"name": "Aaron", "age": 22}'
 

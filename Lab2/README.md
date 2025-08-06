@@ -32,10 +32,13 @@ Unittest Suite – tests each route individually with success/failure feedback
 
 
 Clone the repo: git clone https://github.com/budwayaATWIT/CloudComputing.git cd Lab2
-Install dependicies: pip install fastapi uvicorn requests
+Install dependicies: pip install -r requirements.txt
 *Running Server uvicorn Lab1:app --port 8080 --reload
 **Running command line driver**
-python Lab2.py
+python driver.py
+
+**Running UnitTests**
+python test.py
 
 
 **Routes Overview**

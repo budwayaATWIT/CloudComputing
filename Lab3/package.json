@@ -1,0 +1,15 @@
+{
+    "name": "cloudcomputing-lab3",
+    "version": "1.0.0",
+    "description": "Lab 3 Node.js application for Cloud Computing course",
+    "main": "Lab3.js",
+    "scripts": {
+      "start": "node Lab3.js"
+    },
+    "author": "Aaron Budway",
+    "license": "MIT",
+    "dependencies": {
+      "express": "^4.18.2"
+    }
+  }
+  

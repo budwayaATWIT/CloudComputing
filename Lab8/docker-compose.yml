@@ -1,0 +1,52 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_guitar_shop
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: my_guitar_shop
+      MYSQL_USER: mgs_user
+      MYSQL_PASSWORD: pa55word
+    ports:
+      - "8080:3306"
+    volumes:
+      - ./init:/docker-entrypoint-initdb.d
+      - mysql_data:/var/lib/mysql
+
+  minio:
+    image: minio/minio:latest
+    container_name: minio_local
+    environment:
+      MINIO_ROOT_USER: minio
+      MINIO_ROOT_PASSWORD: minio12345
+    command: server /data --console-address ":9001"
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - ./minio-data:/data
+
+  redis:
+    image: redis:7-alpine
+    container_name: redis_local
+    command: ["redis-server", "--appendonly", "yes"]
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./redis-data:/data
+
+  postfix:
+    image: boky/postfix
+    container_name: postfix_local
+    environment:
+      HOSTNAME: postfix.local
+      MYNETWORKS: "0.0.0.0/0"
+      RELAYHOST: ""
+      ALLOWED_SENDER_DOMAINS: "local.test"
+    ports:
+      - "2525:25"
+    restart: unless-stopped
+
+volumes:
+  mysql_data:
